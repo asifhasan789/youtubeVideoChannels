@@ -21,6 +21,10 @@
         text-align: center;
         color:azure
     }
+    h2{
+        text-align: center;
+        color:azure
+    }
     body{
         background-color: #2a2a2a;
     }
@@ -30,10 +34,13 @@
     <h1>Asif Daily</h1>
     <h1>Youtube Video Channels</h1>
   <button class="btn" id="openTabsBtn">Open Videos</button>
+  <br><br>
+  <button class="btn" id="openAllBtn">Open Videos All at once</button>
+  <h2 id="countdown"></h2>
 
   <script>
-    document.getElementById('openTabsBtn').addEventListener('click', function() {
-      var urls = [
+
+    var urls = [
         'https://www.youtube.com/@cut/videos',
         'https://www.youtube.com/@jubilee/videos',
         'https://www.youtube.com/results?sp=mAEA&search_query=stand+up+comedy+#searching',
@@ -81,13 +88,35 @@
         'https://www.youtube.com/@IrfanJunejo/videos'
       ];
 
+      document.getElementById('openAllBtn').addEventListener('click', function() {
+      urls.forEach(function(url) {
+        window.open(url, '_blank');
+      });
+    });
+    
+    document.getElementById('openTabsBtn').addEventListener('click', function() {
       var index = 0;
+      var countdownElement = document.getElementById('countdown');
 
       function openNextTab() {
         if (index < urls.length) {
           window.open(urls[index], '_blank');
           index++;
-          setTimeout(openNextTab, 19000); // 1 minute (60000 milliseconds)
+
+          var countdown = 19; // Countdown in seconds (1 minute = 60 seconds)
+
+          function updateCountdown() {
+            countdownElement.textContent = 'Next video in: ' + countdown + ' seconds';
+            countdown--;
+
+            if (countdown >= 0) {
+              setTimeout(updateCountdown, 1000); // Update every second (1000 milliseconds)
+            } else {
+              openNextTab();
+            }
+          }
+
+          updateCountdown();
         }
       }
 
