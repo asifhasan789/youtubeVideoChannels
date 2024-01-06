@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Open URLs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    h1{
+        text-align: center;
+        color:azure
+    }
+    body{
+        background-color: #2a2a2a;
+    }
+  </style>
+</head>
+<body>
+    <h1>Asif Daily</h1>
+    <h1>Youtube Video Channels</h1>
+  <button class="btn" id="openTabsBtn">Open Videos</button>
+
+  <script>
+    document.getElementById('openTabsBtn').addEventListener('click', function() {
+      var urls = [
+        'https://www.youtube.com/@cut/videos',
+        'https://www.youtube.com/@jubilee/videos',
+        'https://www.youtube.com/results?sp=mAEA&search_query=stand+up+comedy+#searching',
+        'https://www.youtube.com/@wethemums/shorts',
+        'https://www.youtube.com/@wethehuman/shorts',
+        'https://www.youtube.com/@MDMotivator/shorts',
+        'https://www.youtube.com/@IsaiahGarza/shorts',
+        'https://www.youtube.com/results?sp=mAEA&search_query=movie+recap',
+        'https://www.youtube.com/@HauntingTube/videos',
+        'https://www.youtube.com/@MrLazyTech/videos',
+        'https://www.youtube.com/@AnimeBallsDeep/videos',
+        'https://www.youtube.com/@DrAlexTubio/shorts',
+        'https://www.youtube.com/@DrJosephCipriano/shorts',
+        'https://www.youtube.com/@DoctorMike/videos',
+        'https://www.youtube.com/@GhostSeries/videos',
+        'https://www.youtube.com/@moviesinsighthindi/videos',
+        'https://www.youtube.com/@scarynightsinhindi/videos',
+        'https://www.youtube.com/@BOLLYWOODSILVERSCREEN/videos',
+        'https://www.youtube.com/@RecapRockers/videos',
+        'https://www.youtube.com/@TheRanveerShowHindi/videos',
+        'https://www.youtube.com/@TheRanveerShowClips/videos',
+        'https://www.youtube.com/@FilterCopy/videos',
+        'https://www.youtube.com/@TheViralFever/videos',
+        'https://www.youtube.com/@TheScreenPatti/videos',
+        'https://www.youtube.com/results?sp=mAEA&search_query=reaction',
+        'https://www.youtube.com/results?sp=mAEA&search_query=reactions',
+        'https://www.youtube.com/@javascriptmastery/videos',
+        'https://www.youtube.com/@TheCuriousCobra/videos',
+        'https://www.youtube.com/@GetSetFly/videos',
+        'https://www.youtube.com/@kurzgesagt/videos',
+        'https://www.youtube.com/@AbhiandNiyu/videos',
+        'https://www.youtube.com/@GyanTherapy/videos',
+        'https://www.youtube.com/@VenomsTech/videos',
+        'https://www.youtube.com/@dhruvrathee/videos',
+        'https://www.youtube.com/@NitishRajput/videos',
+        'https://www.youtube.com/@sochbymm/videos',
+        'https://www.youtube.com/@ezsNippets/videos',
+        'https://www.youtube.com/@thesheryianscodingschool/videos',
+        'https://www.youtube.com/@KirtiChow/videos',
+        'https://www.youtube.com/@RGBucketList/videos',
+        'https://www.youtube.com/@NOTYOURTYPE/videos',
+        'https://www.youtube.com/@PassengerParamvir/videos',
+        'https://www.youtube.com/@RealHitVideos/videos',
+        'https://www.youtube.com/@chaiaurcode/videos',
+        'https://www.youtube.com/@IrfanJunejo/videos'
+      ];
+
+      var index = 0;
+
+      function openNextTab() {
+        if (index < urls.length) {
+          window.open(urls[index], '_blank');
+          index++;
+          setTimeout(openNextTab, 19000); // 1 minute (60000 milliseconds)
+        }
+      }
+
+      openNextTab();
+    });
+  </script>
+</body>
+</html>
